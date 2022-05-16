@@ -34,15 +34,15 @@
     transition: all 0.3s ease;
   }
   .carousel .dot:hover {
-    filter: brightness(0) saturate(100%) invert(63%) sepia(96%) saturate(4645%) hue-rotate(5deg) brightness(103%) contrast(91%);
+    filter:  invert(63%) sepia(96%) saturate(4645%) hue-rotate(5deg) brightness(103%) contrast(91%);
    transform: scale(1.2);
-    
-    
+  } 
+  .carousel .dot.active:hover {
+    filter: invert(0%) sepia(3%) saturate(12%) hue-rotate(59deg) brightness(97%) contrast(103%);
   }
   .carousel .dot:active {
     filter: brightness(0) saturate(100%) invert(34%) sepia(18%) saturate(1824%) hue-rotate(92deg) brightness(90%) contrast(91%);
-    /* border-radius: 50%; */
-   
+    border-radius: 50%;
     box-shadow: 2px 3px 3px 1px;
   }
   .carousel #slide-1:checked ~ .slide-1 {
@@ -126,7 +126,6 @@
   .carousel #slide-1:checked ~ .text .text-1 {
     transform: translateX(0vw);
     transition: all 0.5s ease;
-    order: -1;
   }
   .carousel #slide-2:checked ~ .text .text-2 {
     transform: translateX(0vw);
@@ -231,6 +230,7 @@
   @media (max-width: 750px) {
     body {
       font-size: 1.5rem;
+      
     }
 
     .body-slider .wrapper .pictures img {
@@ -249,17 +249,21 @@
   }
 
   @media (max-width: 500px) {
-
+    body{
+      padding: 3vh;
+    }
     .body-slider .wrapper .pictures img {
-      width: 90%;
+      width: 70%;
       height: auto;
     }
 
     .carousel {
-      grid-template-columns: 4vw 23.2vw 7vw 7vw 7vw 7vw 7vw 21.2vw 11vw;
+      grid-template-columns: 13.5vw 13.9vw 7vw 7vw 7vw 7vw 7vw 13.9vw 13.5vw;
      }
+
+    
      .carousel .dot {
-      background-size: 5.2vw;
+      background-size: 4.2vw;
       width: 1.9rem;
       height: 1.9rem;
      }
@@ -268,8 +272,8 @@
 
   @media (max-width: 420px) {
     .carousel .dot {
-      background-size: 5.2vw;
-      width: 1.5rem;
-      height: 1.9rem;
+      background-size: 4.2vw;
+      width: 1.4rem;
+      height: 1.5rem;
      }
   }
