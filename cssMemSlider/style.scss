@@ -12,27 +12,59 @@ body {
     font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
     color: #000;
     font-size: 2rem;
-    padding: 5vh;
+    padding:  3vh 5vh;
 }
 
 .carousel {
     display: grid;
-
-    // grid-template-columns: 2fr 32.5vw 2.5vw 2.5vw 2.5vw 2.5vw 2.5vw 2fr;
-    grid-template-columns: 26.8vw 23vw 2.6vw 2.6vw 2.6vw 2.6vw 2.7vw 26.8vw;
-    grid-template-rows: minmax(65vw 40vw) 1fr;
+    grid-template-columns: 26.8vw 21vw 3vw 3vw 3vw 3vw 3.1vw 26.8vw;
+    // grid-template-rows: minmax(65vw 40vw) 1fr;
     row-gap: 1rem;
 
-    // input {
-    //     display: none;
-    // }
+    input {
+        display: none;
+    }
 
-    // .dot {
-    //     width: 4vw;
-    //     height: 4vh;
+    .dot {
+        width: 3vw;
+        height: 5vh;
+        background-image: url(./assets/choose_ellipse\ .svg);
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: 2.2vw;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .dot:hover{
+        filter:brightness(0) saturate(100%) invert(63%) sepia(96%) saturate(4645%) hue-rotate(5deg) brightness(103%) contrast(91%);
+      
+        border-radius: 50%;
+        box-shadow: (3px 3px 4px 1px);
+    }
+    .dot:active{
+        // background-color: #156b39;
+        filter: brightness(0) saturate(100%)invert(34%) sepia(18%) saturate(1824%) hue-rotate(92deg) brightness(90%) contrast(91%);
+        border-radius: 50%;
+        // box-shadow: (3px 4px 3px 2px);
+        border: solid black;
+        
+    }
 
-
-    // }
+    #slide-1:checked~ .slide-1 {
+        background-image: url(./assets/ellipse_checked.svg);
+    }
+    #slide-2:checked~ .slide-2 {
+        background-image: url(./assets/ellipse_checked.svg);
+    }
+    #slide-3:checked~ .slide-3 {
+        background-image: url(./assets/ellipse_checked.svg);
+    }
+    #slide-4:checked~ .slide-4 {
+        background-image: url(./assets/ellipse_checked.svg);
+    }
+    #slide-5:checked~ .slide-5 {
+        background-image: url(./assets/ellipse_checked.svg);
+    }
 
 
 
@@ -112,11 +144,13 @@ body {
             transform: translateX(-200vh);
             transition: all 0.5s ease;
         }
+        
     }
 
     #slide-1:checked~.text .text-1 {
         transform: translateX(0vw);
         transition: all 0.5s ease;
+        order: -1;
     }
 
     #slide-2:checked~.text .text-2 {
@@ -145,13 +179,10 @@ body {
 .body-slider {
     width: 90vw;
     overflow: hidden;
-    background-color: bisque;
     grid-column-start: 1;
     grid-column-end: 9;
     grid-row-start: 1;
     grid-row-end: 2;
-
-
 
     .wrapper {
         display: grid;
@@ -170,3 +201,5 @@ body {
         }
     }
 }
+
+@import "./adaptiv.scss"
