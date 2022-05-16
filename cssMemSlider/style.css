@@ -32,6 +32,7 @@
     background-size: 2.2vw;
     cursor: pointer;
     transition: all 0.3s ease;
+    user-select: none;
   }
   .carousel .dot:hover {
     filter:  invert(63%) sepia(96%) saturate(4645%) hue-rotate(5deg) brightness(103%) contrast(91%);
