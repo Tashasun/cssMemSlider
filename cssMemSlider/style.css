@@ -35,15 +35,15 @@
   }
   .carousel .dot:hover {
     filter: brightness(0) saturate(100%) invert(63%) sepia(96%) saturate(4645%) hue-rotate(5deg) brightness(103%) contrast(91%);
-    border-radius: 50%;
-    box-shadow: 3px 3px 4px 1px;
-    border: solid black;
+   transform: scale(1.2);
+    
+    
   }
   .carousel .dot:active {
     filter: brightness(0) saturate(100%) invert(34%) sepia(18%) saturate(1824%) hue-rotate(92deg) brightness(90%) contrast(91%);
     /* border-radius: 50%; */
-    border:none;
-    box-shadow: 3px 3px 3px 1px;
+   
+    box-shadow: 2px 3px 3px 1px;
   }
   .carousel #slide-1:checked ~ .slide-1 {
     background-image: url(./assets/ellipse_checked.svg);
@@ -167,30 +167,20 @@
     height: auto;
   }
   
-  @media (max-width: 1500px) {
+  @media (max-width: 1550px) {
     .carousel .dot {
-    width: 2rem;
-    height: 2rem;
+    width: 2.3rem;
+    height: 2.3rem;
     }
+    .carousel .dot {
+      background-size: 1.8vw;
+     }
   }
 
   @media (max-width: 1290px) {
     body {
       font-size: 1.5rem;
     }
-    
-    
-
-    /* .carousel .dot:active {
-      border:none;
-      box-shadow: 1px 1px 3px 1px;
-    }
-    .carousel .dot:hover {
-      border-radius: 50%;
-      border:none;
-      box-shadow: 1px 1px 3px 1px;
-    } */
-
   }
   @media (max-width: 1050px) {
     .carousel {
@@ -206,19 +196,12 @@
       width: 1.7rem;
       height: 1.7rem;
       }
-
-      .carousel .dot:hover {
-        border:none;
-        box-shadow: 1px 1px 3px 1px;
-      } 
   }
-
    
 
   @media (max-width: 870px) {
     body {
       font-size: 2rem;
-      background-color: rgb(169, 231, 193);
     }
 
     .body-slider .wrapper .pictures img {
@@ -227,13 +210,13 @@
     }
   
     .carousel {
-     /* grid-template-columns: 26.8vw 21vw 3vw 3vw 3vw 3vw 3.1vw 26.8vw; */
      grid-template-columns: 17.8vw 15.5vw 4.6vw 4.6vw 4.6vw 4.6vw 4.6vw 15.5vw 17.8vw;
     }
     .carousel .dot {
-      width: 1.5rem;
-      height: 1.5rem;
-      }  
+      width: 2rem;
+      height: 2rem;
+      background-size: 3vw;
+    }  
 
     .carousel .text {
       grid-column-end: 9;
@@ -256,15 +239,16 @@
     }
 
     .carousel {
-      /* grid-template-columns: 26.8vw 21vw 3vw 3vw 3vw 3vw 3.1vw 26.8vw; */
       grid-template-columns: 11vw 21.2vw 5vw 5vw 5vw 5vw 5vw 21.2vw 11vw;
      }
      .carousel .dot {
       background-size: 3.5vw;
+      width: 1.7rem;
+      height: 1.7rem;
      }
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 500px) {
 
     .body-slider .wrapper .pictures img {
       width: 90%;
@@ -276,6 +260,16 @@
      }
      .carousel .dot {
       background-size: 5.2vw;
+      width: 1.9rem;
+      height: 1.9rem;
      }
 
+  }
+
+  @media (max-width: 420px) {
+    .carousel .dot {
+      background-size: 5.2vw;
+      width: 1.5rem;
+      height: 1.9rem;
+     }
   }
