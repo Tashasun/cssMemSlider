@@ -12,7 +12,7 @@
     font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
     color: #000;
     font-size: 2rem;
-    padding: 5vh;
+    padding: 5vw;
   }
   
   .carousel {
@@ -250,9 +250,7 @@
   }
 
   @media (max-width: 500px) {
-    body{
-      padding: 3vh;
-    }
+    
     .body-slider .wrapper .pictures img {
       width: 70%;
       height: auto;
