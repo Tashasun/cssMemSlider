@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: aquamarine;
+    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+    color: #000;
+    font-size: 2rem;
+    padding: 5vw;
+  }
+  
+  .carousel {
+    display: grid;
+    grid-template-columns: 26.8vw 21vw 3vw 3vw 3vw 3vw 3.1vw 26.8vw;
+    grid-row-gap: 1rem;
+  }
+  .carousel input {
+    display: none;
+  }
+  .carousel .dot {
+    width: 3rem;
+    height: 3rem;
+    background-image: url(./assets/choose_ellipse\ .svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2.2vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+  }
+  .carousel .dot:hover {
+    filter:  invert(63%) sepia(96%) saturate(4645%) hue-rotate(5deg) brightness(103%) contrast(91%);
+   transform: scale(1.2);
+  } 
+  .carousel .dot.active:hover {
+    filter: invert(0%) sepia(3%) saturate(12%) hue-rotate(59deg) brightness(97%) contrast(103%);
+  }
+  .carousel .dot:active {
+    filter: brightness(0) saturate(100%) invert(34%) sepia(18%) saturate(1824%) hue-rotate(92deg) brightness(90%) contrast(91%);
+    border-radius: 50%;
+    box-shadow: 2px 3px 3px 1px;
+  }
+  .carousel #slide-1:checked ~ .slide-1 {
+    background-image: url(./assets/ellipse_checked.svg);
+  }
+  .carousel #slide-2:checked ~ .slide-2 {
+    background-image: url(./assets/ellipse_checked.svg);
+  }
+  .carousel #slide-3:checked ~ .slide-3 {
+    background-image: url(./assets/ellipse_checked.svg);
+  }
+  .carousel #slide-4:checked ~ .slide-4 {
+    background-image: url(./assets/ellipse_checked.svg);
+  }
+  .carousel #slide-5:checked ~ .slide-5 {
+    background-image: url(./assets/ellipse_checked.svg);
+  }
+  .carousel #slide-2:checked ~ .body-slider .wrapper {
+    transform: translateX(-90vw);
+  }
+  .carousel #slide-3:checked ~ .body-slider .wrapper {
+    transform: translateX(-180vw);
+  }
+  .carousel #slide-4:checked ~ .body-slider .wrapper {
+    transform: translateX(-270vw);
+  }
+  .carousel #slide-5:checked ~ .body-slider .wrapper {
+    transform: translateX(-360vw);
+  }
+  .carousel .slide-1,
+  .carousel #slide-1 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: end;
+  }
+  .carousel .slide-2, .carousel #slide-2 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: end;
+  }
+  .carousel .slide-3, .carousel #slide-3 {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: end;
+  }
+  .carousel .slide-4, .carousel #slide-4 {
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: end;
+  }
+  .carousel .slide-5, .carousel #slide-5 {
+    grid-column-start: 7;
+    grid-column-end: 8;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: end;
+  }
+  .carousel .text {
+    display: grid;
+    grid-template-columns: 1fr;
+    transition: all 0.5s ease;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-template-areas: "text";
+  }
+  .carousel .text p {
+    grid-area: text;
+    transform: translateX(-200vh);
+    transition: all 0.5s ease;
+  }
+  .carousel #slide-1:checked ~ .text .text-1 {
+    transform: translateX(0vw);
+    transition: all 0.5s ease;
+  }
+  .carousel #slide-2:checked ~ .text .text-2 {
+    transform: translateX(0vw);
+    transition: all 0.5s ease;
+  }
+  .carousel #slide-3:checked ~ .text .text-3 {
+    transform: translateX(0vw);
+    transition: all 0.5s ease;
+  }
+  .carousel #slide-4:checked ~ .text .text-4 {
+    transform: translateX(0vw);
+    transition: all 0.5s ease;
+  }
+  .carousel #slide-5:checked ~ .text .text-5 {
+    transform: translateX(0vw);
+    transition: all 0.5s ease;
+  }
+  
+  .body-slider {
+    width: 90vw;
+    overflow: hidden;
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .body-slider .wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 90vw);
+  }
+  .body-slider .wrapper .pictures {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .body-slider .wrapper .pictures img {
+    width: 40%;
+    height: auto;
+  }
+  
+  @media (max-width: 1550px) {
+    .carousel .dot {
+    width: 2.3rem;
+    height: 2.3rem;
+    }
+    .carousel .dot {
+      background-size: 1.8vw;
+     }
+  }
+
+  @media (max-width: 1290px) {
+    body {
+      font-size: 1.5rem;
+    }
+  }
+  @media (max-width: 1050px) {
+    .carousel {
+      grid-template-columns: 18.1vw 38.6vw 3vw 3vw 3vw 3vw 3vw 18.1vw;
+    }
+
+    .body-slider .wrapper .pictures img {
+      width: 60%;
+      height: auto;
+    }
+  
+    .carousel .dot {
+      width: 1.7rem;
+      height: 1.7rem;
+      }
+  }
+   
+
+  @media (max-width: 870px) {
+    body {
+      font-size: 2rem;
+    }
+
+    .body-slider .wrapper .pictures img {
+      width: 60%;
+      height: auto;
+    }
+  
+    .carousel {
+     grid-template-columns: 17.8vw 15.5vw 4.6vw 4.6vw 4.6vw 4.6vw 4.6vw 15.5vw 17.8vw;
+    }
+    .carousel .dot {
+      width: 2rem;
+      height: 2rem;
+      background-size: 3vw;
+    }  
+
+    .carousel .text {
+      grid-column-end: 9;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+    .body-slide {
+      grid-column-end: 10;
+    }
+    
+  }
+  @media (max-width: 750px) {
+    body {
+      font-size: 1.5rem;
+      
+    }
+
+    .body-slider .wrapper .pictures img {
+      width: 75%;
+      height: auto;
+    }
+
+    .carousel {
+      grid-template-columns: 11vw 21.2vw 5vw 5vw 5vw 5vw 5vw 21.2vw 11vw;
+     }
+     .carousel .dot {
+      background-size: 3.5vw;
+      width: 1.7rem;
+      height: 1.7rem;
+     }
+  }
+
+  @media (max-width: 500px) {
+    
+    .body-slider .wrapper .pictures img {
+      width: 70%;
+      height: auto;
+    }
+
+    .carousel {
+      grid-template-columns: 13.5vw 13.9vw 7vw 7vw 7vw 7vw 7vw 13.9vw 13.5vw;
+     }
+
+    
+     .carousel .dot {
+      background-size: 4.2vw;
+      width: 1.9rem;
+      height: 1.9rem;
+     }
+
+  }
+
+  @media (max-width: 420px) {
+    .carousel .dot {
+      background-size: 4.2vw;
+      width: 1.4rem;
+      height: 1.5rem;
+     }
+  }
